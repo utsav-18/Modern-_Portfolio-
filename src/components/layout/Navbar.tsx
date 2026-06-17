@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Download, Sparkles } from 'lucide-react';
 import { navLinks, siteConfig } from '@/lib/data';
@@ -7,15 +7,11 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const [visible, setVisible] = useState(true);
-  const prevScroll = useRef(0);
 
   useEffect(() => {
     const onScroll = () => {
       const currentScroll = window.scrollY;
       setScrolled(currentScroll > 50);
-      setVisible(prevScroll.current > currentScroll || currentScroll < 50);
-      prevScroll.current = currentScroll;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -48,15 +44,11 @@ export default function Navbar() {
     <>
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
-        animate={{ 
-          opacity: 1,
-          y: visible ? 0 : -100 
-        }}
-        transition={{ 
-          duration: 0.8, 
-          ease: [0.4, 0, 0.2, 1], 
-          delay: scrolled ? 0 : 0.1,
-          y: { duration: 0.4, ease: 'easeInOut' }
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          ease: [0.4, 0, 0.2, 1],
+          delay: scrolled ? 0 : 0.1
         }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled 
