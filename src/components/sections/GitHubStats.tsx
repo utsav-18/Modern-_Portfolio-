@@ -36,7 +36,7 @@ export default function GitHubStats() {
             className="glass border border-surface-border rounded-3xl p-2 overflow-hidden hover:border-white/15 transition-all duration-300"
           >
             <img
-              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USER}&show_icons=true&theme=transparent&hide_border=true&text_color=a0a0b8&title_color=22d3ee&icon_color=34d399&bg_color=00000000&count_private=true`}
+              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USER}&show_icons=true&theme=transparent&hide_border=true&text_color=c4c4d8&title_color=22d3ee&icon_color=34d399&bg_color=00000000&count_private=true`}
               alt="GitHub Stats"
               className="w-full rounded-2xl"
               loading="lazy"
@@ -48,7 +48,7 @@ export default function GitHubStats() {
             className="glass border border-surface-border rounded-3xl p-2 overflow-hidden hover:border-white/15 transition-all duration-300"
           >
             <img
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USER}&layout=compact&theme=transparent&hide_border=true&text_color=a0a0b8&title_color=22d3ee&icon_color=34d399&bg_color=00000000&langs_count=8`}
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USER}&layout=compact&theme=transparent&hide_border=true&text_color=c4c4d8&title_color=22d3ee&icon_color=34d399&bg_color=00000000&langs_count=8`}
               alt="Top Languages"
               className="w-full rounded-2xl"
               loading="lazy"
@@ -60,7 +60,7 @@ export default function GitHubStats() {
             className="glass border border-surface-border rounded-3xl p-2 overflow-hidden hover:border-white/15 transition-all duration-300 lg:col-span-2"
           >
             <img
-              src={`https://streak-stats.demolab.com/?user=${GITHUB_USER}&theme=transparent&hide_border=true&stroke=22d3ee&ring=34d399&fire=06b6d4&currStreakLabel=22d3ee&sideLabels=a0a0b8&dates=6b6b80&background=00000000`}
+              src={`https://streak-stats.demolab.com/?user=${GITHUB_USER}&theme=transparent&hide_border=true&stroke=22d3ee&ring=34d399&fire=06b6d4&currStreakLabel=22d3ee&sideLabels=c4c4d8&dates=8a8aa0&background=00000000`}
               alt="GitHub Streak"
               className="w-full rounded-2xl"
               loading="lazy"

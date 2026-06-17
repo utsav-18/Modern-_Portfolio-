@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
 import { Mail, Download, ArrowRight, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/icons';
-import gsap from 'gsap';
 import { siteConfig, socials, heroTitles } from '@/lib/data';
 import profileImg from '@/assets/profile-optimized.jpg';
 
@@ -136,16 +135,6 @@ function MagneticOrb() {
 
 // ── Hero Section (Premium) ───────────────────────────────────────
 export default function Hero() {
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const badgeRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const tl = gsap.timeline({ delay: 0.2 });
-    tl.from(headingRef.current, { y: 60, opacity: 0, duration: 1, ease: 'power3.out' })
-      .from(subtitleRef.current, { y: 30, opacity: 0, duration: 0.8, ease: 'power2.out' }, '-=0.5');
-  }, []);
-
   const scrollToProjects = () => {
     document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -187,7 +176,6 @@ export default function Hero() {
           <div>
             {/* Premium badge */}
             <motion.div
-              ref={badgeRef}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -203,15 +191,17 @@ export default function Hero() {
             </motion.div>
 
             {/* Name */}
-            <h1
-              ref={headingRef}
+            <motion.h1
+              initial={{ y: 60, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
               className="font-display text-5xl md:text-6xl xl:text-7xl font-black tracking-tight leading-none mb-4"
             >
               <span className="block text-text-primary">Hi, I'm</span>
               <span className="block gradient-text mt-1">
                 Utsav Raj
               </span>
-            </h1>
+            </motion.h1>
 
             {/* Rotating role */}
             <div className="mb-6">
@@ -219,12 +209,14 @@ export default function Hero() {
             </div>
 
             {/* Tagline */}
-            <p
-              ref={subtitleRef}
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.5 }}
               className="text-text-secondary text-lg md:text-xl leading-relaxed max-w-xl mb-10"
             >
               {siteConfig.tagline}
-            </p>
+            </motion.p>
 
             {/* Premium CTAs */}
             <motion.div

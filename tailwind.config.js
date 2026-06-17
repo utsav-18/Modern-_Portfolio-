@@ -25,8 +25,8 @@ export default {
         },
         text: {
           primary: '#f0f0ff',
-          secondary: '#a0a0b8',
-          muted: '#6b6b80',
+          secondary: '#c4c4d8',
+          muted: '#8a8aa0',
         },
       },
       fontFamily: {
