@@ -24,12 +24,14 @@ export interface Project {
   subtitle: string;
   description: string;
   techStack: string[];
-  category: 'Full Stack' | 'AI/ML' | 'Cloud' | 'IoT' | 'DevOps';
+  category: 'Full Stack' | 'AI/ML' | 'Cloud' | 'IoT' | 'DevOps' | 'Freelance';
   featured: boolean;
   githubUrl: string;
   liveUrl: string;
   gradient: string;
   icon: string;
+  image?: string;
+  badges: string[];
 }
 
 export interface Achievement {

@@ -5,7 +5,7 @@ import type { Project } from '@/types';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import { GithubIcon } from '@/components/ui/icons';
 
-const categories = ['All', 'Full Stack', 'AI/ML', 'Cloud'] as const;
+const categories = ['All', 'Freelance', 'Full Stack'] as const;
 
 import { fadeUpVariants } from '@/lib/animations';
 
@@ -21,25 +21,38 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
       whileHover={{ y: -8 }}
       aria-label={`Project: ${project.title}`}
     >
-      {/* Gradient header */}
-      <div className={`relative h-36 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
-        {/* Pattern overlay */}
-        <div className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)',
-            backgroundSize: '20px 20px',
-          }}
-        />
-        {/* Icon */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <motion.span
-            animate={{ y: hovered ? -4 : 0, scale: hovered ? 1.1 : 1 }}
-            transition={{ duration: 0.3 }}
-            className="text-5xl filter drop-shadow-lg"
-          >
-            {project.icon}
-          </motion.span>
-        </div>
+      {/* Image or Gradient header */}
+      <div className={`relative h-36 overflow-hidden ${project.image ? '' : `bg-gradient-to-br ${project.gradient}`}`}>
+        {project.image ? (
+          <motion.img
+            animate={{ scale: hovered ? 1.05 : 1 }}
+            transition={{ duration: 0.4 }}
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        ) : (
+          <>
+            {/* Pattern overlay */}
+            <div className="absolute inset-0 opacity-20"
+              style={{
+                backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)',
+                backgroundSize: '20px 20px',
+              }}
+            />
+            {/* Icon */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <motion.span
+                animate={{ y: hovered ? -4 : 0, scale: hovered ? 1.1 : 1 }}
+                transition={{ duration: 0.3 }}
+                className="text-5xl filter drop-shadow-lg"
+              >
+                {project.icon}
+              </motion.span>
+            </div>
+          </>
+        )}
         {/* Category badge */}
         <div className="absolute top-4 right-4">
           <span className="px-2.5 py-1 text-xs font-semibold rounded-xl bg-black/30 backdrop-blur-sm text-white/80 border border-white/15">
@@ -64,6 +77,17 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
         <p className="text-text-secondary text-sm leading-relaxed mb-5 line-clamp-3">
           {project.description}
         </p>
+
+        {/* Project badges */}
+        {project.badges && project.badges.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            {project.badges.map((badge) => (
+              <span key={badge} className="px-2 py-0.5 text-xs rounded-lg bg-accent-primary/10 border border-accent-primary/20 text-accent-primary">
+                {badge}
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* Tech stack */}
         <div className="flex flex-wrap gap-1.5 mb-5">
@@ -156,7 +180,7 @@ export default function Projects() {
             <motion.p custom={2} variants={fadeUpVariants} initial="hidden" animate={inView ? 'visible' : 'hidden'}
               className="text-text-secondary text-lg max-w-xl"
             >
-              Real-world projects across full stack, AI/ML, and cloud domains.
+              Freelance and full-stack projects delivered for real clients.
             </motion.p>
           </div>
 
