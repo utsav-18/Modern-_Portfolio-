@@ -5,10 +5,10 @@ import { MapPin, GraduationCap, Target } from 'lucide-react';
 import { fadeUpVariants } from '@/lib/animations';
 
 const stats = [
-  { value: '7+', label: 'Projects Built' },
-  { value: '2', label: 'Cloud Certifications' },
-  { value: '2+', label: 'Hackathon Awards' },
-  { value: '3rd', label: 'Year B.Tech IT' },
+  { value: '8+', label: 'Projects Built' },
+  { value: '8', label: 'Certifications' },
+  { value: '120+', label: 'LeetCode Problems' },
+  { value: '8.82', label: 'CGPA' },
 ];
 
 export default function About() {
@@ -45,7 +45,7 @@ export default function About() {
               className="flex flex-col gap-3 mb-10">
               <div className="flex items-center gap-3 text-text-secondary text-sm">
                 <GraduationCap size={16} className="text-accent-primary shrink-0" />
-                B.Tech Information Technology · Cloud Computing Specialization
+                B.Tech Information Technology · Cloud Computing · Alliance University · CGPA 8.82
               </div>
               <div className="flex items-center gap-3 text-text-secondary text-sm">
                 <MapPin size={16} className="text-accent-primary shrink-0" />
@@ -53,7 +53,7 @@ export default function About() {
               </div>
               <div className="flex items-center gap-3 text-text-secondary text-sm">
                 <Target size={16} className="text-accent-primary shrink-0" />
-                Goal: Full Stack + Cloud Engineer at an innovative company
+                Goal: Freelance Full Stack Developer at an innovative company
               </div>
             </motion.div>
 

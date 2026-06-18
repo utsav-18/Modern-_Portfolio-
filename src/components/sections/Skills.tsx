@@ -4,22 +4,24 @@ import { skills } from '@/lib/data';
 import type { Skill } from '@/types';
 import { fadeUpVariants, fadeUpFast, easeSmooth } from '@/lib/animations';
 
-const categories: Skill['category'][] = ['Frontend', 'Backend', 'Cloud', 'DevOps', 'AI/ML'];
+const categories: Skill['category'][] = ['Languages', 'Frontend', 'Backend', 'Database', 'Cloud', 'Tools'];
 
 const categoryColors: Record<string, string> = {
-  Frontend: 'from-cyan-500 to-emerald-500',
-  Backend:  'from-green-500 to-emerald-500',
-  Cloud:    'from-blue-500 to-cyan-500',
-  DevOps:   'from-orange-500 to-amber-500',
-  'AI/ML':  'from-teal-500 to-rose-500',
+  Languages: 'from-violet-500 to-purple-500',
+  Frontend:  'from-cyan-500 to-emerald-500',
+  Backend:   'from-green-500 to-emerald-500',
+  Database:  'from-amber-500 to-orange-500',
+  Cloud:     'from-blue-500 to-cyan-500',
+  Tools:     'from-rose-500 to-pink-500',
 };
 
 const categoryBg: Record<string, string> = {
-  Frontend: 'rgba(34,211,238,0.08)',
-  Backend:  'rgba(16,185,129,0.1)',
-  Cloud:    'rgba(6,182,212,0.1)',
-  DevOps:   'rgba(245,158,11,0.1)',
-  'AI/ML':  'rgba(236,72,153,0.1)',
+  Languages: 'rgba(139,92,246,0.1)',
+  Frontend:  'rgba(34,211,238,0.08)',
+  Backend:   'rgba(16,185,129,0.1)',
+  Database:  'rgba(245,158,11,0.1)',
+  Cloud:     'rgba(6,182,212,0.1)',
+  Tools:     'rgba(244,63,94,0.1)',
 };
 
 function SkillCard({ skill, index, inView }: { skill: Skill; index: number; inView: boolean }) {
@@ -113,7 +115,7 @@ export default function Skills() {
 
         {/* Summary */}
         <motion.div custom={10} variants={fadeUpVariants} initial="hidden" animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-16">
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-16">
           {categories.map((cat) => {
             const count = skills.filter((s) => s.category === cat).length;
             return (

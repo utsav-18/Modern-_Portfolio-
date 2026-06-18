@@ -1,11 +1,9 @@
 import { useRef, useState } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { projects } from '@/lib/data';
 import type { Project } from '@/types';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import { GithubIcon } from '@/components/ui/icons';
-
-const categories = ['All', 'Freelance', 'Full Stack'] as const;
 
 import { fadeUpVariants } from '@/lib/animations';
 
@@ -152,11 +150,6 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
 export default function Projects() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
-  const [activeFilter, setActiveFilter] = useState<typeof categories[number]>('All');
-
-  const filtered = activeFilter === 'All'
-    ? projects
-    : projects.filter((p) => p.category === activeFilter);
 
   return (
     <section id="projects" className="section-padding relative overflow-hidden" ref={ref} aria-label="Projects section">
@@ -170,57 +163,31 @@ export default function Projects() {
           <span className="text-text-muted text-sm font-medium uppercase tracking-widest">Projects</span>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <motion.h2 custom={1} variants={fadeUpVariants} initial="hidden" animate={inView ? 'visible' : 'hidden'}
-              className="font-display text-4xl md:text-5xl font-bold text-text-primary mb-2"
-            >
-              Things I've Built
-            </motion.h2>
-            <motion.p custom={2} variants={fadeUpVariants} initial="hidden" animate={inView ? 'visible' : 'hidden'}
-              className="text-text-secondary text-lg max-w-xl"
-            >
-              Freelance and full-stack projects delivered for real clients.
-            </motion.p>
-          </div>
-
-          {/* Filter tabs */}
-          <motion.div custom={3} variants={fadeUpVariants} initial="hidden" animate={inView ? 'visible' : 'hidden'}
-            className="flex flex-wrap gap-2"
+        <div className="mb-12">
+          <motion.h2 custom={1} variants={fadeUpVariants} initial="hidden" animate={inView ? 'visible' : 'hidden'}
+            className="font-display text-4xl md:text-5xl font-bold text-text-primary mb-2"
           >
-            {categories.map((cat) => (
-              <motion.button
-                key={cat}
-                onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-1.5 rounded-xl text-sm font-medium transition-all duration-300 ${
-                  activeFilter === cat
-                    ? 'bg-accent-primary text-white shadow-glow'
-                    : 'glass border border-surface-border text-text-secondary hover:text-text-primary hover:border-cyan-500/30'
-                }`}
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                {cat}
-              </motion.button>
-            ))}
-          </motion.div>
+            Things I've Built
+          </motion.h2>
+          <motion.p custom={2} variants={fadeUpVariants} initial="hidden" animate={inView ? 'visible' : 'hidden'}
+            className="text-text-secondary text-lg max-w-xl"
+          >
+            Freelance and full-stack projects delivered for real clients.
+          </motion.p>
         </div>
 
         {/* Projects grid */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeFilter}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
-          >
-            {filtered.map((project, i) => (
-              <ProjectCard key={project.id} project={project} index={i} inView={inView} />
-            ))}
-          </motion.div>
-        </AnimatePresence>
+        <motion.div
+          key="all-projects"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+        >
+          {projects.map((project, i) => (
+            <ProjectCard key={project.id} project={project} index={i} inView={inView} />
+          ))}
+        </motion.div>
 
         {/* GitHub CTA */}
         <motion.div custom={12} variants={fadeUpVariants} initial="hidden" animate={inView ? 'visible' : 'hidden'}

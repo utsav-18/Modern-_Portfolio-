@@ -34,7 +34,7 @@ export default function Footer() {
               <Sparkles size={14} className="text-accent-primary/50 group-hover:text-accent-primary transition-colors" />
             </div>
             <p className="text-text-muted text-sm leading-relaxed max-w-xs">
-              Building scalable web apps, cloud solutions, and AI products. Open to exciting opportunities.
+              Building real-world client projects with React.js, Node.js, and modern web technologies. Open to exciting opportunities.
             </p>
             <div className="flex items-center gap-2 mt-4">
               <span className="relative flex h-2 w-2">

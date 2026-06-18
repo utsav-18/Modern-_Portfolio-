@@ -13,7 +13,7 @@ export interface NavLink {
 
 export interface Skill {
   name: string;
-  category: 'Frontend' | 'Backend' | 'Cloud' | 'DevOps' | 'AI/ML';
+  category: 'Languages' | 'Frontend' | 'Backend' | 'Database' | 'Cloud' | 'Tools';
   level: number; // 0–100
   icon: string;
 }

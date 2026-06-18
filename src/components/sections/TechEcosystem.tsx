@@ -5,12 +5,12 @@ import { techNodes } from '@/lib/data';
 import { fadeUpVariants } from '@/lib/animations';
 
 const categoryColors: Record<string, string> = {
-  Frontend: 'rgba(34,211,238,0.16)',
-  Backend:  'rgba(16,185,129,0.2)',
-  Database: 'rgba(245,158,11,0.2)',
-  Cloud:    'rgba(6,182,212,0.2)',
-  'AI/ML':  'rgba(236,72,153,0.2)',
-  DevOps:   'rgba(245,158,11,0.2)',
+  Languages: 'rgba(139,92,246,0.2)',
+  Frontend:  'rgba(34,211,238,0.16)',
+  Backend:   'rgba(16,185,129,0.2)',
+  Database:  'rgba(245,158,11,0.2)',
+  Cloud:     'rgba(6,182,212,0.2)',
+  Tools:     'rgba(244,63,94,0.2)',
 };
 
 export default function TechEcosystem() {
