@@ -14,7 +14,7 @@ export const siteConfig = {
   bio: "I'm a B.Tech Information Technology student at Alliance University specializing in Cloud Computing with a CGPA of 8.82. I'm a freelance full-stack developer experienced in building real-world client projects across healthcare, education, sports, and industrial domains using the MERN Stack, Flask, and modern web technologies. I focus on responsive design, SEO, accessibility, and delivering conversion-focused user experiences.",
   location: 'India',
   email: 'utsavrajdocx@gmail.com',
-  resumeUrl: 'https://1drv.ms/b/c/0ad5894fe0a9c7e2/IQCaYPaHYl6sQ544wNsP3DqsAWXivzIEiykeJW8Jn0j9n6Y?e=g7S3rj',
+  resumeUrl: '/Resume.pdf',
   available: true,
 };
 

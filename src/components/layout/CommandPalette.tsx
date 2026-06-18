@@ -21,7 +21,7 @@ const commands = [
   })),
   {
     id: 'resume',
-    label: 'Download Resume',
+    label: 'View Resume',
     category: 'Actions',
     action: () => window.open(siteConfig.resumeUrl, '_blank'),
     icon: <ExternalLink size={14} />,

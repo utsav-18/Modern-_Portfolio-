@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Download, Sparkles } from 'lucide-react';
+import { Menu, X, Download, Sparkles, ExternalLink } from 'lucide-react';
 import { navLinks, siteConfig } from '@/lib/data';
 
 export default function Navbar() {
@@ -122,8 +122,8 @@ export default function Navbar() {
                 }}
               />
               <Sparkles size={14} className="relative" />
-              <span className="relative">Resume</span>
-              <Download size={14} className="relative transition-transform duration-300 group-hover:translate-y-[-2px]" />
+              <span className="relative">View Resume</span>
+              <ExternalLink size={14} className="relative transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </motion.a>
           </div>
 
@@ -171,8 +171,8 @@ export default function Navbar() {
                 transition={{ delay: navLinks.length * 0.05 }}
                 className="flex items-center gap-2 px-4 py-3 mt-2 text-sm font-semibold rounded-xl bg-accent-primary text-white text-center justify-center hover:bg-cyan-500 transition-colors"
               >
-                <Download size={14} />
-                Download Resume
+                <ExternalLink size={14} />
+                View Resume
               </motion.a>
             </div>
           </motion.div>

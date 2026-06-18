@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
-import { Mail, Download, ArrowRight, Sparkles } from 'lucide-react';
+import { Mail, Download, ArrowRight, Sparkles, ExternalLink } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/icons';
 import { siteConfig, socials, heroTitles } from '@/lib/data';
 
@@ -248,8 +248,8 @@ export default function Hero() {
                 whileTap={{ scale: 0.97 }}
                 id="hero-resume-btn"
               >
-                <Download size={16} className="relative transition-transform duration-300 group-hover:-translate-y-0.5" />
-                <span className="relative">Resume</span>
+                <ExternalLink size={16} className="relative transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <span className="relative">View Resume</span>
               </motion.a>
             </motion.div>
 
