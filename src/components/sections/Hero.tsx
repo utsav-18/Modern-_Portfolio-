@@ -3,7 +3,6 @@ import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motio
 import { Mail, Download, ArrowRight, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/icons';
 import { siteConfig, socials, heroTitles } from '@/lib/data';
-import profileImg from '@/assets/profile-optimized.jpg';
 
 const iconMap: Record<string, React.ReactNode> = {
   github: <GithubIcon size={18} />,
@@ -65,7 +64,7 @@ function MagneticOrb() {
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       style={{ x: sx, y: sy }}
-      className="relative mx-auto w-64 h-64 md:w-80 md:h-80"
+      className="relative mx-auto w-80 h-80 md:w-96 md:h-96"
     >
       {/* Outer glow */}
       <div className="absolute inset-[-50px] rounded-full bg-cyan-500/5 blur-[80px] animate-glow-pulse pointer-events-none" />
@@ -92,9 +91,9 @@ function MagneticOrb() {
       {/* Avatar area with actual profile image */}
       <div className="absolute inset-0 rounded-full overflow-hidden glass-strong border-2 border-cyan-500/30 shadow-glow-xl flex items-center justify-center">
         <img
-          src={profileImg}
+          src="/profile.png"
           alt="Utsav Raj"
-          className="w-full h-full object-cover scale-125"
+          className="w-full h-full object-cover object-top"
           loading="eager"
         />
         {/* Gradient overlay on image */}
