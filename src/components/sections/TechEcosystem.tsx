@@ -79,7 +79,7 @@ export default function TechEcosystem() {
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
               className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-emerald-600 flex items-center justify-center shadow-glow-lg"
             >
-              <span className="text-2xl">⚡</span>
+              <span className="text-2xl">◆</span>
             </motion.div>
             <p className="text-center text-xs text-text-muted mt-2 font-mono">Core</p>
           </div>

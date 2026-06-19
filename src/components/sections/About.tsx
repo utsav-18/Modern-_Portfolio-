@@ -8,7 +8,7 @@ const stats = [
   { value: '8+', label: 'Projects Built' },
   { value: '8', label: 'Certifications' },
   { value: '120+', label: 'LeetCode Problems' },
-  { value: '8.82', label: 'CGPA' },
+  { value: '8.86', label: 'CGPA' },
 ];
 
 export default function About() {
@@ -45,7 +45,7 @@ export default function About() {
               className="flex flex-col gap-3 mb-10">
               <div className="flex items-center gap-3 text-text-secondary text-sm">
                 <GraduationCap size={16} className="text-accent-primary shrink-0" />
-                B.Tech Information Technology · Cloud Computing · Alliance University · CGPA 8.82
+                B.Tech Information Technology · Cloud Computing · Alliance University · CGPA 8.86
               </div>
               <div className="flex items-center gap-3 text-text-secondary text-sm">
                 <MapPin size={16} className="text-accent-primary shrink-0" />

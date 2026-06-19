@@ -119,14 +119,14 @@ function MagneticOrb() {
         animate={{ y: [0, -8, 0], rotate: [0, 5, -5, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
       >
-        ⚛️
+        ◈
       </motion.div>
       <motion.div
         className="absolute -bottom-1 -left-1 w-7 h-7 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs shadow-lg"
         animate={{ y: [0, 6, 0], rotate: [0, -5, 5, 0] }}
         transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
       >
-        ☁️
+        ▲
       </motion.div>
     </motion.div>
   );
