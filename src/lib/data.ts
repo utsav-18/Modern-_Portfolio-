@@ -11,7 +11,7 @@ export const siteConfig = {
   role: 'Freelance Full Stack Developer',
   roleShort: 'B.Tech IT · Alliance University',
   tagline: 'Freelance full-stack developer building real-world client projects with React.js, Node.js, and modern web technologies.',
-  bio: "I'm a B.Tech Information Technology student at Alliance University specializing in Cloud Computing with a CGPA of 8.86. I'm a freelance full-stack developer experienced in building real-world client projects across healthcare, education, sports, and industrial domains using the MERN Stack, Flask, and modern web technologies. I focus on responsive design, SEO, accessibility, and delivering conversion-focused user experiences.",
+  bio: "I'm a B.Tech Information Technology student at Alliance University specializing in Cloud Computing with a CGPA of 8.9. I'm a freelance full-stack developer experienced in building real-world client projects across healthcare, education, sports, and industrial domains using the MERN Stack, Flask, and modern web technologies. I focus on responsive design, SEO, accessibility, and delivering conversion-focused user experiences.",
   location: 'India',
   email: 'utsavrajdocx@gmail.com',
   resumeUrl: '/Resume.pdf',
