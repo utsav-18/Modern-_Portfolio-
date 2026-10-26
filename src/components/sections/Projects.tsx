@@ -103,16 +103,18 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
 
         {/* Actions */}
         <div className="flex items-center gap-3">
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-text-secondary hover:text-text-primary text-sm transition-colors"
-            aria-label={`GitHub for ${project.title}`}
-          >
-            <GithubIcon size={15} />
-            Code
-          </a>
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-text-secondary hover:text-text-primary text-sm transition-colors"
+              aria-label={`GitHub for ${project.title}`}
+            >
+              <GithubIcon size={15} />
+              Code
+            </a>
+          )}
           {project.liveUrl && (
             <a
               href={project.liveUrl}
@@ -209,3 +211,4 @@ export default function Projects() {
     </section>
   );
 }
+

@@ -77,6 +77,21 @@ export const skills: Skill[] = [
 // ── Projects ──────────────────────────────────────────────────
 export const projects: Project[] = [
   {
+    id: 'hari-engineering',
+    title: 'Hari Engineering',
+    subtitle: 'Industrial Hydraulic Solutions',
+    description: 'Designed and developed a modern industrial engineering website for Hari Engineering in Jamshedpur, showcasing hydraulic equipment, maintenance and refurbishment services, quote request workflows, and WhatsApp integration with a responsive dark-themed UI.',
+    techStack: ['React.js', 'Vite', 'Tailwind CSS', 'TypeScript', 'Framer Motion'],
+    category: 'Freelance',
+    featured: true,
+    githubUrl: 'https://github.com/utsav-18/Industrial-Website-',
+    liveUrl: 'https://industrialwebsite.vercel.app/',
+    gradient: 'from-blue-600 via-slate-600 to-cyan-500',
+    icon: '◈',
+    image: '/projects-img/hari.png',
+    badges: ['Freelance Project', 'Industrial Website', 'Client Project'],
+  },
+  {
     id: 'savitri-dental',
     title: 'Savitri Dental Hospital & Glow Savitri',
     subtitle: 'Healthcare & Aesthetics Clinic',

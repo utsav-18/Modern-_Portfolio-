@@ -5,7 +5,7 @@ import { MapPin, GraduationCap, Target } from 'lucide-react';
 import { fadeUpVariants } from '@/lib/animations';
 
 const stats = [
-  { value: '8+', label: 'Projects Built' },
+  { value: '9+', label: 'Projects Built' },
   { value: '8', label: 'Certifications' },
   { value: '120+', label: 'LeetCode Problems' },
   { value: '8.9', label: 'CGPA' },
@@ -102,3 +102,4 @@ export default function About() {
     </section>
   );
 }
+
