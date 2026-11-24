@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
-import { Mail, Download, ArrowRight, Sparkles, ExternalLink } from 'lucide-react';
+import { Mail, ArrowRight, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/icons';
 import { siteConfig, socials, heroTitles } from '@/lib/data';
 
@@ -238,19 +238,6 @@ export default function Hero() {
                 <span className="relative">View Projects</span>
                 <ArrowRight size={16} className="relative transition-transform duration-300 group-hover:translate-x-1" />
               </motion.button>
-
-              <motion.a
-                href={siteConfig.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative flex items-center gap-2 px-8 py-4 glass-strong border border-surface-border hover:border-cyan-500/50 text-text-primary font-semibold rounded-2xl transition-all duration-300 overflow-hidden"
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                id="hero-resume-btn"
-              >
-                <ExternalLink size={16} className="relative transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                <span className="relative">View Resume</span>
-              </motion.a>
             </motion.div>
 
             {/* Premium Social Links */}

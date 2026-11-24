@@ -10,7 +10,6 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
-  const progressRef = useRef<HTMLSpanElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const particlesRef = useRef<HTMLDivElement>(null);
 
@@ -54,22 +53,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       .to(barRef.current, { width: '100%', duration: 2, ease: 'power2.inOut' }, 0.5)
       .to({}, { duration: 0.5 });
 
-    // Animate counter
-    let count = 0;
-    const interval = setInterval(() => {
-      const increment = Math.floor(Math.random() * 5) + 2;
-      count += increment;
-      if (count >= 100) {
-        count = 100;
-        clearInterval(interval);
-      }
-      if (progressRef.current) {
-        progressRef.current.textContent = `${count}%`;
-      }
-    }, 50);
-
     return () => {
-      clearInterval(interval);
       tl.kill();
       particlesElement?.replaceChildren();
     };
@@ -120,7 +104,6 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
         </div>
         <div className="flex justify-between items-center mt-3">
           <span className="text-text-muted text-xs font-mono">Loading</span>
-          <span ref={progressRef} className="text-text-secondary text-xs font-mono">0%</span>
         </div>
       </div>
 

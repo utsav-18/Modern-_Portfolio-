@@ -1,16 +1,7 @@
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { useEffect, useState } from 'react';
-
 export default function ScrollProgress() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 100);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <>
@@ -33,14 +24,6 @@ export default function ScrollProgress() {
           background: 'linear-gradient(90deg, #22d3ee, transparent)',
         }}
       />
-      {/* Floating percentage indicator */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: show ? 1 : 0, scale: show ? 1 : 0.8 }}
-        className="fixed top-3 right-4 z-[100] font-mono text-[10px] text-accent-primary/50 uppercase tracking-widest pointer-events-none"
-      >
-        <motion.span>{Math.round(scrollYProgress.get() * 100)}%</motion.span>
-      </motion.div>
     </>
   );
 }

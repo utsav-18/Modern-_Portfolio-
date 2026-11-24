@@ -39,7 +39,6 @@ function SkillCard({ skill, index, inView }: { skill: Skill; index: number; inVi
           <span className="text-xl">{skill.icon}</span>
           <span className="text-text-primary text-sm font-semibold">{skill.name}</span>
         </div>
-        <span className="text-text-muted text-xs font-mono">{skill.level}%</span>
       </div>
       <div className="h-1.5 bg-surface rounded-full overflow-hidden">
         <motion.div

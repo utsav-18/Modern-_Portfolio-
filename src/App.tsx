@@ -20,7 +20,6 @@ import Achievements from '@/components/sections/Achievements';
 import Experience from '@/components/sections/Experience';
 import Projects from '@/components/sections/Projects';
 import Certifications from '@/components/sections/Certifications';
-import TechEcosystem from '@/components/sections/TechEcosystem';
 import GitHubStats from '@/components/sections/GitHubStats';
 import Testimonials from '@/components/sections/Testimonials';
 import Contact from '@/components/sections/Contact';
@@ -104,7 +103,6 @@ export default function App() {
             <Experience />
             <Projects />
             <Certifications />
-            <TechEcosystem />
             <GitHubStats />
             <Testimonials />
             <Contact />

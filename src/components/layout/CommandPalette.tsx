@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Hash, ExternalLink, X } from 'lucide-react';
-import { navLinks, siteConfig } from '@/lib/data';
+import { navLinks } from '@/lib/data';
 
 interface CommandPaletteProps {
   open: boolean;
@@ -19,13 +19,6 @@ const commands = [
     },
     icon: <Hash size={14} />,
   })),
-  {
-    id: 'resume',
-    label: 'View Resume',
-    category: 'Actions',
-    action: () => window.open(siteConfig.resumeUrl, '_blank'),
-    icon: <ExternalLink size={14} />,
-  },
   {
     id: 'github',
     label: 'Open GitHub Profile',

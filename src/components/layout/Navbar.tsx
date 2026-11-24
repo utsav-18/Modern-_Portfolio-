@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Download, Sparkles, ExternalLink } from 'lucide-react';
-import { navLinks, siteConfig } from '@/lib/data';
+import { Menu, X } from 'lucide-react';
+import { navLinks } from '@/lib/data';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -61,7 +61,7 @@ export default function Navbar() {
         {/* Nav glow accent */}
         <div className={`absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`} />
 
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
           {/* Logo */}
           <motion.button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -104,29 +104,6 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Resume CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <motion.a
-              href={siteConfig.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl bg-accent-primary text-white hover:bg-cyan-500 transition-all duration-200 shadow-glow hover:shadow-glow-lg overflow-hidden"
-              whileHover={{ scale: 1.04, y: -1 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              {/* Shimmer effect */}
-              <motion.div
-                className="absolute inset-0 -translate-x-full skew-x-12 group-hover:translate-x-full transition-transform duration-700"
-                style={{
-                  background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
-                }}
-              />
-              <Sparkles size={14} className="relative" />
-              <span className="relative">View Resume</span>
-              <ExternalLink size={14} className="relative transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </motion.a>
-          </div>
-
           {/* Mobile Toggle */}
           <motion.button
             className="md:hidden p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-hover transition-colors"
@@ -162,18 +139,6 @@ export default function Navbar() {
                   {link.label}
                 </motion.button>
               ))}
-              <motion.a
-                href={siteConfig.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.05 }}
-                className="flex items-center gap-2 px-4 py-3 mt-2 text-sm font-semibold rounded-xl bg-accent-primary text-white text-center justify-center hover:bg-cyan-500 transition-colors"
-              >
-                <ExternalLink size={14} />
-                View Resume
-              </motion.a>
             </div>
           </motion.div>
         )}

@@ -14,7 +14,7 @@ export default function GitHubStats() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div custom={0} variants={fadeUpVariants} initial="hidden" animate={inView ? 'visible' : 'hidden'} className="flex items-center gap-3 mb-4">
-          <span className="text-accent-primary font-mono text-sm font-medium">09.</span>
+          <span className="text-accent-primary font-mono text-sm font-medium">08.</span>
           <div className="h-px w-12 bg-accent-primary/40" />
           <span className="text-text-muted text-sm font-medium uppercase tracking-widest">GitHub Activity</span>
         </motion.div>
